@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 26, 2018 8:42:40 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.pojo.Nvegmenu" table="nvegmenu" catalog="project">
+        <id name="nvegid" type="java.lang.Integer">
+            <column name="nvegid" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="nvegeggmaincourse" class="com.pojo.Nvegeggmaincourse" fetch="select">
+            <column name="eggmaincourseid" />
+        </many-to-one>
+        <many-to-one name="nvegbiryanees" class="com.pojo.Nvegbiryanees" fetch="select">
+            <column name="biryaneesid" />
+        </many-to-one>
+        <many-to-one name="addhotel" class="com.pojo.Addhotel" fetch="select">
+            <column name="hotelid" />
+        </many-to-one>
+        <many-to-one name="nvegmuttonmaincourse" class="com.pojo.Nvegmuttonmaincourse" fetch="select">
+            <column name="muttonmaincourseid" />
+        </many-to-one>
+        <many-to-one name="nvegstarter" class="com.pojo.Nvegstarter" fetch="select">
+            <column name="nvegstarterid" />
+        </many-to-one>
+        <many-to-one name="nvegchickenmaincourse" class="com.pojo.Nvegchickenmaincourse" fetch="select">
+            <column name="chickenmaincourseid" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

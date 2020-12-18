@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 26, 2018 8:42:40 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.pojo.Vegsoupmenu" table="vegsoupmenu" catalog="project">
+        <id name="vegsoupmenuid" type="java.lang.Integer">
+            <column name="vegsoupmenuid" />
+            <generator class="identity" />
+        </id>
+        <property name="vegsoupmenutype" type="string">
+            <column name="vegsoupmenutype" length="250" />
+        </property>
+        <property name="prize" type="java.lang.Integer">
+            <column name="prize" />
+        </property>
+        <property name="vegmenuid" type="java.lang.Integer">
+            <column name="vegmenuid" />
+        </property>
+    </class>
+</hibernate-mapping>

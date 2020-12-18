@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 26, 2018 8:42:40 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.pojo.Addhotel" table="addhotel" catalog="project">
+        <id name="hotelid" type="java.lang.Integer">
+            <column name="hotelid" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="registration" class="com.pojo.Registration" fetch="select">
+            <column name="regid" />
+        </many-to-one>
+        <property name="hotelname" type="string">
+            <column name="hotelname" length="250" />
+        </property>
+        <property name="hoteladdress" type="string">
+            <column name="hoteladdress" length="250" />
+        </property>
+        <property name="hotelphoneno" type="string">
+            <column name="hotelphoneno" length="250" />
+        </property>
+        <property name="hotelimg" type="binary">
+            <column name="hotelimg" />
+        </property>
+        <property name="hotelemail" type="string">
+            <column name="hotelemail" length="250" />
+        </property>
+        <property name="services" type="string">
+            <column name="services" length="250" />
+        </property>
+        <property name="paymentmethod" type="string">
+            <column name="paymentmethod" length="250" />
+        </property>
+        <property name="hoteltimefrm" type="string">
+            <column name="hoteltimefrm" length="250" />
+        </property>
+        <property name="hoteltimeto" type="string">
+            <column name="hoteltimeto" length="250" />
+        </property>
+        <property name="hoteldays" type="string">
+            <column name="hoteldays" length="250" />
+        </property>
+        <set name="nvegmenus" table="nvegmenu" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="hotelid" />
+            </key>
+            <one-to-many class="com.pojo.Nvegmenu" />
+        </set>
+        <set name="vegmenus" table="vegmenu" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="hotelid" />
+            </key>
+            <one-to-many class="com.pojo.Vegmenu" />
+        </set>
+    </class>
+</hibernate-mapping>

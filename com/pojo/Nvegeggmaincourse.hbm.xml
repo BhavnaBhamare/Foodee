@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 26, 2018 8:42:40 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.pojo.Nvegeggmaincourse" table="nvegeggmaincourse" catalog="project">
+        <id name="eggmaincourseid" type="java.lang.Integer">
+            <column name="eggmaincourseid" />
+            <generator class="identity" />
+        </id>
+        <property name="eggmenutype" type="string">
+            <column name="eggmenutype" length="250" />
+        </property>
+        <property name="eggprize" type="java.lang.Integer">
+            <column name="eggprize" />
+        </property>
+        <set name="nvegmenus" table="nvegmenu" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="eggmaincourseid" />
+            </key>
+            <one-to-many class="com.pojo.Nvegmenu" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 26, 2018 8:42:40 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.pojo.Nvegmuttonmaincourse" table="nvegmuttonmaincourse" catalog="project">
+        <id name="muttonmaincourseid" type="java.lang.Integer">
+            <column name="muttonmaincourseid" />
+            <generator class="identity" />
+        </id>
+        <property name="muttonmenutype" type="string">
+            <column name="muttonmenutype" length="250" />
+        </property>
+        <property name="muttonprize" type="java.lang.Integer">
+            <column name="muttonprize" />
+        </property>
+        <set name="nvegmenus" table="nvegmenu" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="muttonmaincourseid" />
+            </key>
+            <one-to-many class="com.pojo.Nvegmenu" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 26, 2018 8:42:40 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.pojo.Nvegstarter" table="nvegstarter" catalog="project">
+        <id name="nvegstarterid" type="java.lang.Integer">
+            <column name="nvegstarterid" />
+            <generator class="identity" />
+        </id>
+        <property name="nvegstartermenutype" type="string">
+            <column name="nvegstartermenutype" length="250" />
+        </property>
+        <property name="nstaterprize" type="java.lang.Integer">
+            <column name="nstaterprize" />
+        </property>
+        <set name="nvegmenus" table="nvegmenu" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="nvegstarterid" />
+            </key>
+            <one-to-many class="com.pojo.Nvegmenu" />
+        </set>
+    </class>
+</hibernate-mapping>

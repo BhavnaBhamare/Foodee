@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 26, 2018 8:42:40 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.pojo.Vegrice" table="vegrice" catalog="project">
+        <id name="vegriceid" type="java.lang.Integer">
+            <column name="vegriceid" />
+            <generator class="identity" />
+        </id>
+        <property name="vegmenutype" type="string">
+            <column name="vegmenutype" length="250" />
+        </property>
+        <property name="riceprize" type="java.lang.Integer">
+            <column name="riceprize" />
+        </property>
+        <set name="vegmenus" table="vegmenu" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="vegriceid" />
+            </key>
+            <one-to-many class="com.pojo.Vegmenu" />
+        </set>
+    </class>
+</hibernate-mapping>

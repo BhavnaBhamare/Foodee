@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 26, 2018 8:42:40 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.pojo.Addpackage" table="addpackage" catalog="project">
+        <id name="packid" type="java.lang.Integer">
+            <column name="packid" />
+            <generator class="identity" />
+        </id>
+        <property name="packagetotalday" type="string">
+            <column name="packagetotalday" length="250" />
+        </property>
+        <property name="packageamount" type="java.lang.Integer">
+            <column name="packageamount" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 26, 2018 8:42:40 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.pojo.Vegmenu" table="vegmenu" catalog="project">
+        <id name="vegid" type="java.lang.Integer">
+            <column name="vegid" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="vegrice" class="com.pojo.Vegrice" fetch="select">
+            <column name="vegriceid" />
+        </many-to-one>
+        <many-to-one name="addhotel" class="com.pojo.Addhotel" fetch="select">
+            <column name="hotelid" />
+        </many-to-one>
+        <many-to-one name="vegsabji" class="com.pojo.Vegsabji" fetch="select">
+            <column name="sabjimenuid" />
+        </many-to-one>
+        <many-to-one name="vegstarter" class="com.pojo.Vegstarter" fetch="select">
+            <column name="vegstatermenuid" />
+        </many-to-one>
+        <many-to-one name="sweets" class="com.pojo.Sweets" fetch="select">
+            <column name="sweetid" />
+        </many-to-one>
+        <many-to-one name="roti" class="com.pojo.Roti" fetch="select">
+            <column name="rotiid" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

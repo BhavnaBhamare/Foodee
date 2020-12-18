@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 26, 2018 8:42:40 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.pojo.Registration" table="registration" catalog="project">
+        <id name="regid" type="java.lang.Integer">
+            <column name="regid" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="role" class="com.pojo.Role" fetch="select">
+            <column name="roleid" />
+        </many-to-one>
+        <property name="firstname" type="string">
+            <column name="firstname" length="250" />
+        </property>
+        <property name="lastname" type="string">
+            <column name="lastname" length="250" />
+        </property>
+        <property name="gender" type="string">
+            <column name="gender" length="250" />
+        </property>
+        <property name="bdate" type="date">
+            <column name="bdate" length="0" />
+        </property>
+        <property name="mobileno" type="string">
+            <column name="mobileno" length="250" />
+        </property>
+        <property name="emailid" type="string">
+            <column name="emailid" length="250" />
+        </property>
+        <property name="password" type="string">
+            <column name="password" length="250" />
+        </property>
+        <property name="confirmpassword" type="string">
+            <column name="confirmpassword" length="250" />
+        </property>
+        <property name="address" type="string">
+            <column name="address" length="250" />
+        </property>
+        <property name="areaname" type="string">
+            <column name="areaname" length="250" />
+        </property>
+        <property name="city" type="string">
+            <column name="city" length="250" />
+        </property>
+        <property name="pincode" type="string">
+            <column name="pincode" length="250" />
+        </property>
+        <set name="addhotels" table="addhotel" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="regid" />
+            </key>
+            <one-to-many class="com.pojo.Addhotel" />
+        </set>
+    </class>
+</hibernate-mapping>

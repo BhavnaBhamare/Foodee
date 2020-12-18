@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 26, 2018 8:42:40 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.pojo.Roti" table="roti" catalog="project">
+        <id name="rotiid" type="java.lang.Integer">
+            <column name="rotiid" />
+            <generator class="identity" />
+        </id>
+        <property name="roticategory" type="string">
+            <column name="roticategory" />
+        </property>
+        <property name="rotiprize" type="java.lang.Integer">
+            <column name="rotiprize" />
+        </property>
+        <set name="vegmenus" table="vegmenu" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="rotiid" />
+            </key>
+            <one-to-many class="com.pojo.Vegmenu" />
+        </set>
+    </class>
+</hibernate-mapping>
